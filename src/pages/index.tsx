@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { guides } from '../data/guides';
 
 export default function Home() {
@@ -7,7 +8,12 @@ export default function Home() {
       <div className="space-y-4">
         {guides.map(guide => (
           <div key={guide.id} className="bg-white p-4 rounded shadow-md">
-            <h2 className="text-2xl font-semibold">{guide.title}</h2>
+            {/* Link 컴포넌트로 상세 페이지로 이동 */}
+            <Link href={`/post/${guide.id}`}>
+              <a className="text-2xl font-semibold hover:text-blue-500">
+                {guide.title}
+              </a>
+            </Link>
             <p className="text-gray-700">{guide.content}</p>
           </div>
         ))}
