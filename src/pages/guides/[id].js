@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 export default function GuideDetail() {
   const router = useRouter();
   const { id } = router.query;
-  const guide = guides.find(g => g.id.toString() === id);
+  const guide = guides.find((g) => g.id.toString() === id);
 
   if (!guide) return <div>Loading...</div>;
 
