@@ -1,35 +1,15 @@
-// pages/index.js
-import Sidebar from '../components/Sidebar';
-import Tabs from '../components/Tabs';
-import { guides } from '../data/guides';
-import Link from 'next/link';
+import Layout from '../components/Layout';
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex">
-      {/* Sidebar */}  
-      <Sidebar />
-
-      {/* Main Content */}
-      <div className="flex-1 p-8">
-        <h1 className="text-4xl font-bold text-center mb-8">장기 공략 목록</h1>
-        
-        {/* Tabs */}
-        <Tabs />
-
-        {/* Game Guides */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
-          {guides.map((guide) => (
-            <div key={guide.id} className="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
-              <h2 className="text-xl font-semibold mb-4">{guide.title}</h2>
-              <p className="text-gray-700">{guide.content}</p>
-              <Link href={`/guides/${guide.id}`}>
-                <a className="text-blue-500 mt-4 block">자세히 보기</a>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+    <Layout>
+      <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">게임 보드</h2>
+      <p className="text-gray-700 dark:text-gray-300">
+        여기에 장기 게임이 진행됩니다. 게임 규칙에 맞춰 플레이를 시작하세요.
+      </p>
+      {/* 여기에 실제 게임 보드나 다른 콘텐츠가 들어갑니다 */}
+    </Layout>
   );
-}
+};
+
+export default Home;
