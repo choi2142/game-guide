@@ -6,14 +6,16 @@ import data from "../data/sections.json"; // 섹션 데이터 임포트 (예: JS
 type SectionContextType = {
   selectedSection: "Game" | "Rules" | "Ranking";
   setSelectedSection: (section: "Game" | "Rules" | "Ranking") => void;
-  sectionData: { title: string; content: string };
+  sectionData: { title: string; content: string ; image: string };
 };
 
 const SectionContext = createContext<SectionContextType | undefined>(undefined);
 
 export function SectionProvider({ children }: { children: ReactNode }) {
   const [selectedSection, setSelectedSection] = useState<"Game" | "Rules" | "Ranking">("Game");
-  const [sectionData, setSectionData] = useState<{ title: string; content: string }>({ title: "", content: "" });
+  const [sectionData, setSectionData] = useState<{ title: string; content: string; image: string
+
+   }>({ title: "", content: "", image: ""});
 
   useEffect(() => {
     if (data[selectedSection]) {

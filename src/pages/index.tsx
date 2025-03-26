@@ -7,7 +7,8 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <h2 className="heading-large">{sectionData.title}</h2> {}
+      <h2 className="heading-large">{sectionData.title}</h2>
+      <img src={sectionData.image} alt={sectionData.title} className="my-4" />
       <p>{sectionData.content}</p>
     </div>
   );
