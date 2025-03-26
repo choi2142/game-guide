@@ -1,4 +1,4 @@
-import { useSection } from "../pages/SectionContext"; // Context 가져오기
+import { useSection } from "../contexts/SectionContext"; // Context 가져오기
 
 const Header = () => {
   const { setSelectedSection } = useSection(); // Context에서 setSelectedSection 가져오기

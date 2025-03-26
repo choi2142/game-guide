@@ -1,6 +1,6 @@
 // layouts/RootLayout.tsx
 
-import { SectionProvider } from "../pages/SectionContext"; // SectionContext 임포트
+import { SectionProvider } from "../contexts/SectionContext"; // SectionContext 임포트
 import Header from "../components/Header"; // Header 임포트
 import "../styles/global.css"; // 글로벌 스타일 임포트
 

@@ -1,6 +1,6 @@
 // pages/index.tsx
 
-import { useSection } from "../pages/SectionContext"; // SectionContext 임포트
+import { useSection } from "../contexts/SectionContext"; // SectionContext 임포트
 
 export default function Home() {
   const { sectionData } = useSection(); // SectionContext로부터 데이터 가져오기
