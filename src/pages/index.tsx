@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <h2 className="text-2xl font-bold mt-10">{sectionData.title}</h2> {/* mt-10으로 margin-top 추가 */}
+      <h2 className="heading-large">{sectionData.title}</h2> {}
       <p>{sectionData.content}</p>
     </div>
   );
