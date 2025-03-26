@@ -1,17 +1,20 @@
-import Link from 'next/link';
+import { useSection } from "../pages/SectionContext"; // Context 가져오기
 
 const Header = () => {
+  const { setSelectedSection } = useSection(); // Context에서 setSelectedSection 가져오기
+
   return (
-    <header className="bg-white dark:bg-[#1E2028] shadow-md p-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-semibold text-gray-800 dark:text-white">장기 게임</h1>
-        <nav>
-          <Link href="/" className="text-gray-800 dark:text-white mx-2">홈</Link>
-          <Link href="/rules" className="text-gray-800 dark:text-white mx-2">게임 규칙</Link>
-          <Link href="/profile" className="text-gray-800 dark:text-white mx-2">내 정보</Link>
+    <header className="header">
+        <div className="header-title">
+            <span className="jang">장</span><span className="gi">기</span>
+        </div>
+        <nav className="nav-container">
+            <button className="nav-link" onClick={() => setSelectedSection("Game")}>장기 소개</button>
+            <button className="nav-link" onClick={() => setSelectedSection("Rules")}>기물 소개</button>
+            <button className="nav-link" onClick={() => setSelectedSection("Ranking")}>랭킹</button>
         </nav>
-      </div>
     </header>
+
   );
 };
 

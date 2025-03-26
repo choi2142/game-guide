@@ -1,15 +1,14 @@
-import Layout from '../components/Layout';
+// pages/index.tsx
 
-const Home = () => {
+import { useSection } from "../pages/SectionContext"; // SectionContext 임포트
+
+export default function Home() {
+  const { sectionData } = useSection(); // SectionContext로부터 데이터 가져오기
+
   return (
-    <Layout>
-      <h2 className="text-3xl font-semibold text-gray-800 dark:text-white mb-4">게임 보드</h2>
-      <p className="text-gray-700 dark:text-gray-300">
-        여기에 장기 게임이 진행됩니다. 게임 규칙에 맞춰 플레이를 시작하세요.
-      </p>
-      {/* 여기에 실제 게임 보드나 다른 콘텐츠가 들어갑니다 */}
-    </Layout>
+    <div className="home-container">
+      <h2 className="text-2xl font-bold mt-10">{sectionData.title}</h2> {/* mt-10으로 margin-top 추가 */}
+      <p>{sectionData.content}</p>
+    </div>
   );
-};
-
-export default Home;
+}

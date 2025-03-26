@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* 전체 페이지 설정 */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;  /* 전체 화면을 차지하게 설정 */
+}
+
+/* 헤더 스타일 */
+.header {
+  flex-shrink: 0;  /* Header는 크기를 줄이지 않음 */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #8f740c;
+  color: white;
+  padding: 1.5rem 2rem; /* 높이를 늘려 제목과 네비 분리 */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column; /* 수직 정렬 */
+  gap: 0.5rem; /* 제목과 네비게이션 간격 */
+  z-index: 1000;
+}
+
+/* 헤더 제목 */
+.header-title {
+  font-size: 3rem; /* 글씨 크기 크게 */
+  font-weight: 900; /* 굵은 글씨 */
+  text-align: left;
+  display: flex;
+  align-items: center;
+}
+
+/* '장' 글자 스타일 */
+.header-title .jang {
+  color: #dc3545; /* 빨간색 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 살짝 어두운 그림자 효과 */
+}
+
+/* '기' 글자 스타일 */
+.header-title .gi {
+  color: #28a745; /* 초록색 */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* 살짝 어두운 그림자 효과 */
+}
+
+/* 네비게이션 바 */
+.nav-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+}
+
+/* 네비게이션 버튼 */
+.nav-link {
+  background: transparent;
+  color: #f8f9fa;
+  font-size: 1.125rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border: 2px solid transparent;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Hover & Active 효과 */
+.nav-link:hover {
+  color: #ffdd57;
+  border-color: #ffdd57;
+  transform: scale(1.05);
+}
+
+.nav-link:active {
+  color: #ffd700;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .header {
+      padding: 0.75rem 1.5rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+  }
+  .nav-container {
+      margin-left: 0; /* 모바일에서는 네비게이션도 왼쪽 정렬 */
+  }
+}
+
+/* 콘텐츠 영역 */
+.content-wrapper {
+  flex: 1; /* 남은 공간을 채우도록 */
+}
+
+/* main-content 스타일 */
+.main-content {
+  margin-top: 8rem; /* header의 높이만큼 여백 추가 */
+  flex-grow: 1;  /* 남은 공간을 차지하도록 설정 */
+  overflow-y: auto;  /* 콘텐츠가 많을 경우 스크롤 가능 */
+  padding: 2rem;
+}
+
+/* 헤더 hover 효과 */
+.header:hover {
+  background-color: #6e5a24; /* 더 진한 골드 */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
